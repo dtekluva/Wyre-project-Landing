@@ -92,46 +92,79 @@
         </div>
         <div class="w-form">
           <form id="email-form" name="email-form" data-name="Email Form" method="get" class="form">
-            <div class="input__block"><label for="name" class="label">Name</label><input type="text" class="text__field w-input" maxlength="256" name="name" data-name="Name" placeholder="Name" id="name" required=""></div>
+            <div class="input__block"><label for="name" class="label">Name</label><input type="text" class="text__field w-input" maxlength="256" name="name" data-name="Name" placeholder="Name" id="name" required="" pattern="[a-zA-Z]+"></div> 
             <div class="input__block"><label for="email" class="label">Email</label><input type="email" class="text__field w-input" maxlength="256" name="email" data-name="Email" placeholder="Email" id="email" required=""></div>
             <div class="input__blocks">
-              <div class="input__block"><label for="Phone-No" class="label">Phone No.</label><input type="tel" class="text__field w-input" maxlength="256" name="Phone-No" data-name="Phone No." placeholder="XXXX-XXXX-XX" id="Phone-No" required=""></div>
-              <div class="input__block"><label for="Location" class="label">Location</label><input type="text" class="text__field w-input" maxlength="256" name="Location" data-name="Location" placeholder="Location" id="Location" required=""></div>
+              <div class="input__block"><label for="Phone-No" class="label">Phone No.</label><input type="text" class="text__field w-input" maxlength="256" name="phone_number" data-name="phone_number." pattern="[0-9]{11,}" title="Please enter valid phone number"
+                placeholder="XXX-XXXX-XXXX" id="Phone-No" required=""></div>
+              <div class="input__block"><label for="Location" class="label">Location</label><input type="text" class="text__field w-input" maxlength="256" name="location" data-name="Location" placeholder="Location" id="Location" required=""></div>
             </div>
             <div class="input__blocks">
-              <div class="input__block"><label for="Application-2" class="label">Application</label><input type="text" class="text__field w-input" maxlength="256" name="Application-2" data-name="Application 2" placeholder="" id="Application-2" required=""></div>
-              <div class="input__block"><label for="field-2" class="label">Facility type</label><select id="field-2" name="field-2" data-name="Field 2" required="" class="select-field w-select">
+              <div class="input__block"><label for="use_case" class="label">Application</label><input type="text" class="text__field w-input" maxlength="256" name="use_case" data-name="Application 2" placeholder="" id="Application-2" required=""></div>
+              <div class="input__block"><label for="facility_type" class="label">Facility type</label><select id="field-2" name="facility_type" data-name="Field 2" required="" class="select-field w-select">
                   <option value="">Select one...</option>
-                  <option value="First">Residential</option>
-                  <option value="Second">Commercial</option>
-                  <option value="Third">Industrial</option>
+                  <option value="Residential">Residential</option>
+                  <option value="Commercial">Commercial</option>
+                  <option value="Industrial">Industrial</option>
                 </select></div>
             </div>
             <div class="input__blocks">
-              <div class="input__block"><label for="email-2" class="label">How many Sources</label><input type="number" class="text__field w-input" maxlength="256" name="email-2" data-name="Email 2" placeholder="e.g 1" id="email-2" required=""></div>
-              <div class="input__block"><label for="field" class="label">Sources of energy</label><select id="field" name="field" data-name="Field" required="" class="select-field w-select">
+              <div class="input__block"><label for="email-2" class="label">How many Sources</label><input type="number" class="text__field w-input" maxlength="256" name="no_of_sources" data-name="Email 2" placeholder="e.g 1" id="email-2" required=""></div>
+              <div class="input__block"><label for="field" class="label">Sources of energy</label><select id="field" name="sources_of_energy" data-name="Field" required="" class="select-field w-select">
                   <option value="">Select one...</option>
-                  <option value="First">Check utility</option>
-                  <option value="Second">Generator 1-5</option>
-                  <option value="Third">Gas generator</option>
-                  <option value="Fourth">IPP</option>
-                  <option value="Fifth">Solar</option>
+                  <option value="Check utility">Check utility</option>
+                  <option value="Generator 1-5">Generator 1-5</option>
+                  <option value="Gas generator">Gas generator</option>
+                  <option value="IPP">IPP</option>
+                  <option value="Solar">Solar</option>
                 </select></div>
             </div>
-            <div class="input__blocks d-none">
+            <!-- <div class="input__blocks d-none">
               <div class="input__block average__cost"><label for="Amount" class="label _w-40">Average Cost of energy or units consumed monthly</label>
                 <div class="amount__field">
                   <div class="amount__block">
                     <div><strong>₦</strong></div>
                   </div><input type="email" class="text__field w-input" maxlength="256" name="Amount" data-name="Amount" placeholder="Amount" id="Amount" required="">
                 </div>
-              </div>
+              </div> -->
             </div>
             <div class="input__blocks">
-              <div class="input__block"><label for="Application" class="label">Average Cost of energy</label><input type="number" class="text__field w-input" maxlength="256" name="Application" data-name="Application" placeholder="" id="Application" required=""></div>
-              <div class="input__block"><label for="Facility-type" class="label">Units consumed monthly</label><input type="tel" class="text__field w-input" maxlength="256" name="Facility-type" data-name="Facility type" placeholder="" id="Facility-type" required=""></div>
+              <div class="input__block"><label for="Application" class="label">Average Cost of energy</label><input type="number" class="text__field w-input" maxlength="256" name="avg_energy_cost" data-name="Application" placeholder="" id="Application" required=""></div>
+              <div class="input__block"><label for="Facility-type" class="label">Units consumed monthly</label><input type="tel" class="text__field w-input" maxlength="256" name="units_consumed_monthly" data-name="Facility type" placeholder="" id="Facility-type" required=""></div>
             </div><input type="submit" value="Submit" data-wait="Please wait..." class="button button__get-started w-button">
           </form>
+
+          <script>
+            const formEl=document.querySelector('.form')
+                
+            formEl.addEventListener('submit', event => {
+              event.preventDefault()
+
+                
+              const formData = new FormData(formEl)
+              const data = Object.fromEntries(formData)
+              console.log('Helooooooooooooooooooo', data);
+              // document.getElementById('email-form').style.display = 'none'
+              
+              // const abc = document.getElementById('email-form')
+              // abc.style.display = 'none'
+              // console.log(abc)
+              
+                
+              fetch('https://wyreng.xyz/socials/contact', {
+                method: 'POST',
+                headers: {
+                 'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(data)
+              }).then(res => res.json())
+                .then(data => {formEl.reset()
+                  alert('Welcome, We will get back to you shortly')
+              })
+                .catch(error => console.log(error)); 
+            });
+          </script>
+
           <div class="w-form-done">
             <div>Thank you! Your submission has been received!</div>
           </div>
