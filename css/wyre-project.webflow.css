@@ -843,16 +843,36 @@ li {
   background-image: url('../images/Idris.png');
 }
 
-.teams__image.jumoke {
-  background-image: url('../images/Jumoke.png');
-}
-
-.teams__image.grace {
-  background-image: url('../images/Grace.png');
-}
-
 .teams__image.adrian {
   background-image: url('../images/Adrian.png');
+}
+
+.teams__image.anthony {
+  background-image: url('../images/anthony.png');
+  background-position: 50% 100%;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.teams__image.kayodeDev {
+  background-image: url('../images/kayodeDev.png');
+  background-position: 50% 100%;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.teams__image.kayodeOprtn {
+  background-image: url('../images/kayodeOprtn.png');
+  background-position: 50% 100%;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.teams__image.williamson {
+  background-image: url('../images/williamson.png');
+}
+.teams__image.t {
+  background-image: url('../images/t.png');
 }
 
 .teams__image.taiwo {
@@ -867,6 +887,10 @@ li {
   background-image: url('../images/Tayo.png');
   background-position: 50% 50%;
   background-size: cover;
+}
+
+.teams__image.jumoke {
+  background-image: url('../images/Jumoke.png');
 }
 
 .teams__name {
@@ -2235,6 +2259,29 @@ li {
   -webkit-flex: 55%;
   -ms-flex: 55%;
   flex: 55%;
+}
+
+.get_a_quote {
+    margin-right: 0px;
+    padding: 44px 10%;
+    -webkit-box-flex: 55%;
+    -webkit-flex: 55%;
+    -ms-flex: 55%;
+    flex: 55%;
+}
+
+#get_paragraph {
+  text-align: center;
+  /* font-weight: bold; */
+}
+
+.purple__heading.get-a-quote {
+  margin-top: -90px;
+}
+
+.get_a_Quote-form-container {
+  width: 70%;
+  margin: auto;
 }
 
 .input__block {
