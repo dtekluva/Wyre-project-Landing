@@ -1,5 +1,6 @@
 
-
+// const wyreng = "http://159.203.188.27"
+const wyreng = "https://backend.wyreng.com"
 
 function scrollTopFunction(position) {
   document.body.scrollTop = position;
@@ -37,7 +38,7 @@ formEl && formEl.addEventListener('submit', event => {
   openLoader()
   setTimeout(hideLoader, 5000)
   scrollTopFunction(40)
-  fetch('https://wyreng.xyz/socials/contact/', {
+  fetch(`${wyreng}/socials/contact/`, {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
@@ -68,7 +69,7 @@ letsTalk && letsTalk.addEventListener('submit', event => {
   const formData = new FormData(letsTalk)
   const data = Object.fromEntries(formData)
   openLoader('spinner-display', '.footer__form-container', 'loader-talk')
-  fetch('https://wyreng.xyz/socials/lets_talk/', {
+  fetch(`${wyreng}/socials/lets_talk/`, {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
@@ -87,4 +88,33 @@ letsTalk && letsTalk.addEventListener('submit', event => {
       letsTalk.reset()
     })
     .catch(error => failure.classList.add('spinner-display'));
+});
+
+const getAQuote = document.querySelector('.quote-form')
+
+getAQuote && getAQuote.addEventListener('submit', event => {
+  event.preventDefault()
+  const formData = new FormData(getAQuote)
+  const data = Object.fromEntries(formData)
+  openLoader()
+  setTimeout(hideLoader, 5000);
+  scrollTopFunction(15)
+  fetch(`${wyreng}/socials/get_quote/`, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify(data)
+  }).then(res => {
+    hideLoader()
+    if (res.ok) {
+      return res.json();
+    }
+    throw new Error('Something went wrong');
+  })
+    .then(data => {      
+      getAQuote.reset()
+      openPopup()
+    })
+    .catch(error =>alert('something went wrong while processing the request, please try again'));
 });
