@@ -76,6 +76,10 @@ li {
   align-items: center;
 }
 
+.hero__content {
+  font-family: 'Montserrat', sans-serif;
+}
+
 .hero.all___containers {
   min-width: 100%;
   padding-top: 100px;
@@ -182,7 +186,7 @@ li {
 }
 
 .body {
-  font-family: Montserrat, sans-serif;
+  font-family: 'Montserrat', sans-serif;
   color: #1d1d1d;
   font-size: 18px;
   line-height: 25.99px;
@@ -2454,7 +2458,7 @@ li {
 }
 
 .body-2 {
-  font-family: Montserrat, sans-serif;
+  font-family: 'Montserrat', sans-serif;
 }
 
 .pricing__text {
