@@ -907,6 +907,10 @@ li {
   text-align: center;
 }
 
+.legal__container {
+  margin-left: 62px;
+}
+
 .title {
   margin-top: 54px;
   margin-bottom: 54px;
@@ -3514,12 +3518,12 @@ li {
     height: 30px;
   }
 
-  .sponsors__image.lennox {
+  .sponsors__image.polaris {
     width: 90px;
     height: 30px;
   }
 
-  .sponsors__image.bukka {
+  .sponsors__image.sterling {
     height: 40px;
   }
 
