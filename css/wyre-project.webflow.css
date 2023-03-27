@@ -327,12 +327,13 @@ li {
   height: 49px;
 }
 
-.sponsors__image.lennox {
+.sponsors__image.polaris {
   height: 52px;
 }
 
-.sponsors__image.bukka {
-  height: 72px;
+.sponsors__image.sterling {
+  height: 90px;
+  width: 109px;
 }
 
 .sponsors__container {
